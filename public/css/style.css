@@ -1,0 +1,895 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sansita, Calibri;
+}
+
+body{
+background-color: #656662;  
+background-image: url("../images/architecture-1857175__480.jpg");
+height: 90%;
+background-size: cover;
+}
+
+.gris{
+    background-color:rgba(192, 193, 194,0.9);
+}
+
+.grille{
+    display: grid;
+}
+
+ 
+
+#logo{
+    width: 100%; 
+    background-color:transparent;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas: 'logo nav nav' ;
+    
+    padding: 15px;
+}
+#logo img {
+    margin-left: 130px;
+   width: 90%;
+   grid-area: logo;
+   align-self: center;
+}
+ nav{
+     grid-area: nav; 
+     align-items: center;
+     align-self: center;
+     
+ }
+nav ul{
+    
+    display: grid;
+    width: 95%;
+    margin: auto;
+    padding: 5px;
+    list-style-type: none; 
+    grid-template-rows: auto;  
+    grid-template-columns: repeat(7,1fr) ;
+    grid-template-areas: ". realisation service a_propos contact langue ." ;
+    column-gap: 15px;
+}
+
+li a:hover{
+    background-color: rgba(192, 193, 194,0.8);
+    text-decoration: underline; 
+    color: black;  
+    box-shadow: 0 -2px 7px black;
+    border-radius: 15px;
+}
+   
+li a:active {
+    color: black;
+    transform: translate(5px, 3px);
+}
+
+nav li > a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #7fbc43;
+    
+    border-radius: 66px;
+    padding: 5px 10px 5px 10px;
+  
+}
+
+#realisation{
+    grid-area: realisation;
+    
+    
+}
+
+#service{
+    grid-area: service;
+}
+
+#a_propos{
+    grid-area: a_propos;
+}
+
+#contact{
+    grid-area: contact;
+}
+
+#langue{
+    grid-area: langue;
+}
+
+/* css page login*/
+
+.pagelogin{
+    grid-template-rows:auto;
+    
+}
+#loginform{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:auto;
+    grid-template-areas: 'gauche droite';
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+#infologin{
+    grid-area: droite;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:repeat(5,auto);
+    grid-template-areas: 'a a a a'
+                         ' e f f h'
+                         'i i j j '
+                         'm m o o '
+                         'q s s t ';
+    align-items: center;
+    text-align: center;
+    margin-right: 30px;
+    
+
+}
+#connecter{
+    grid-area: a;
+    margin:20px;
+}
+#h1connexion{
+    grid-area: f;
+    margin:20px;
+}
+#lbluserconnexion{
+    grid-area: i;
+    margin:20px;
+}
+#inputUsername{
+    grid-area: j;
+    margin:20px;
+    text-align: center;
+}
+#lblpasswordconnexion{
+    grid-area: m;
+    margin:20px;
+}
+#inputPassword{
+    grid-area: o;
+    margin:20px;
+    text-align: center;
+}
+#imagelogin{
+grid-area: gauche;
+
+}
+#btnconnexion{
+    grid-area: s;
+    margin:20px;
+    height: 30px;
+}
+
+#logoconnexion{
+    width: 500px;
+    height: 350px;
+   
+}
+
+
+#btnconnexion{
+    background: rgba(191, 116, 128, 0.2);
+    border:     #BF7480;
+    width: 200px;
+}
+/* css page register*/
+
+#register{
+    grid-template-rows:auto;
+    
+}
+#contenant{
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:auto;
+    grid-template-areas: 'g d';
+   align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+
+
+#imageregister{
+ grid-area: g;
+ width: 500px;
+height: 350px;
+}
+
+#registerform{
+    grid-area: d;
+    text-align: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+#registerh1{
+    grid-area: a;
+  
+}
+
+label[for = "registration_form_username"]{
+    grid-area: i;
+    margin:20px;
+    
+}
+#registration_form_username{
+    
+    margin:20px;
+    text-align: center;
+}
+
+label[for = "registration_form_plainPassword"]{
+    
+    margin:20px;
+   
+}
+#registration_form_plainPassword{
+    
+    margin:20px;
+    text-align: center;
+}
+label[for = "registration_form_agreeTerms"]{
+ 
+    margin:20px;
+   
+}
+
+
+#btnsinscrire {
+    grid-area: s;
+    margin:20px;
+    height: 30px;
+    background: rgba(191, 116, 128, 0.2);
+    border:     #BF7480;
+    width: 300px;
+}
+
+
+
+
+
+
+
+
+/* css page nous contacter*/
+
+.formgroup{
+    display: flexbox;
+   align-items: baseline;
+   }
+   .captcha {
+       font-family: "Comic Sans MS", cursive, sans-serif;
+       font-style: italic;
+       font-weight: bold;
+       font-size: 2em;
+       padding: 3px;
+       border-radius: 5px;
+       text-decoration: line-through;
+       color: black;
+       background-color:rgba(192, 193, 194,0.8);
+     }
+     
+     .restart a {
+       text-decoration: none;
+     }
+     
+     .errmsg {
+       color: black;
+       padding: 5px;
+       transition: 0.5s ease;
+     }
+     .container {
+     
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       align-items: center;
+       align-self: center;
+     }
+   
+   #reCaptcha{
+       text-align: center;
+   }
+   
+   .containercontact{
+       
+       margin-top: 30px;
+       margin-bottom: 15px;
+       text-align: center;
+   }
+   .nouscontacterinfo{
+       grid-template-rows: repeat(5,auto);
+       grid-template-columns: repeat(2,1fr);
+       grid-template-areas: 'a f '
+                            'b f'
+                            'd z'
+                            'c e'
+                            'c e';
+       padding: 15px;
+       
+   }
+   
+   #formcontact{
+       border: groove;
+       
+       padding: 20px;
+       margin-top: 10px;
+       font-size: 20px;
+       font:bold;
+       
+   }
+   #textecontact{
+       font-size: 35px;
+       text-align: center;
+       
+       color: rgb(43, 38, 38);
+       
+   }
+   #Contact{
+       background-color:rgba(192, 193, 194,.7);
+   }
+   #formcontact label{
+       padding-right: 25px;
+       font-style: italic;
+       font-size: 35px;
+       
+   }
+   
+   #formcontact input {
+      float: right;
+       
+   }
+   #formcontact #contactligne3 label {
+       
+        align-self: center;
+   
+    }
+   
+   #contact_message{
+     width: 400px; 
+     height: 135px;
+      margin-top: 50px;
+      
+   }
+   #contact_email{
+       width: 300px; 
+      height: 30px;
+   }
+   #contact_nom{
+       width: 300px; 
+       height: 30px;
+   }
+   #contact_tel{
+       height: 30px;
+   }
+   #contactligne1{
+       grid-area: a;
+       text-align: left;
+      
+   }
+   #contactligne2{
+       grid-area: b;
+       text-align: left;
+       
+   }
+   #contactligne3{
+        
+       grid-area: c;
+       align-items:baseline;
+       
+       
+   }
+   #tel{
+       width: 10%;
+       background: transparent;
+   }
+   #contactligne4{
+       visibility: hidden;
+       grid-area: e;
+       
+       
+   }
+   #contactligne5{
+        
+       grid-area: d;
+       text-align: left;
+   }
+   #contactligne4 input{
+       width: 300px;
+       margin-top: 30px;
+       background: rgba(80, 98, 104, 0.8);
+       border:     #525050;
+       float: none;
+   }
+   #verification{
+       margin-top: 15px;
+       grid-area: f;
+   }
+   #je_ne{
+       margin-top: 15px;
+   }
+
+/*                   css page services                    */
+
+
+
+#infoService{
+    display: grid;
+    animation-name: anim;
+    animation-duration: 3s;
+    background-color:rgba(192, 193, 194,0.8);
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 'a a '
+                         'c d';                      
+    padding: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}   
+#infoService ul{
+    list-style-type: none;
+}
+.service{
+      grid-area: a;  
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#service2{
+    margin-top: 30px;
+    grid-area: d; 
+    padding: 25px;
+    font-size: 35px;
+   text-align: center;
+   align-items: center;
+}
+#service1{
+    margin-top: 30px;
+    grid-area: c; 
+    padding: 25px;
+    font-size: 35px;
+   text-align: center;
+   align-items: center;
+}
+
+   /* css Matériaux          */
+
+
+#materiaux{
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 'a a a'
+                         'c c c'
+                         'd d d';   
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    background-color:rgba(192, 193, 194,0.8);
+}
+#materiaux h1{
+    grid-area: a;
+}
+.table{
+    margin-top: 20px;
+    border-collapse: collapse;
+   border: 1px solid black;
+   grid-area: c;
+}
+th,td{
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#materiaux a{
+    grid-area: d;
+}
+
+
+/** Visualisation du produit côté utilisateur **/
+
+.flex {
+    display: flex;
+    flex-direction: start;
+}
+
+div#galerie {
+  width: 40% ;
+  height: 90%;
+  background: rgba(191, 116, 128, 0.08);
+  border: 1px solid #BF7480, 8% ;
+  padding: 15px ;
+  margin: 15px 30px ;
+  text-align: center ;
+}
+
+#big_pict {
+    max-width: 50%;
+    min-width: 25%;
+}
+
+ul#galerie_mini {
+  margin: 1% ;
+  padding: 1% ;
+  list-style-type: none ;
+}
+
+.mini_pict {
+    max-width: 20%;
+    min-width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+ul#galerie_mini li {
+  display: inline;
+}
+
+ul#galerie_mini li a img {
+  margin: 1% ;
+  border: 1px solid #BF7480, 8% ;
+}
+
+dl#photo {
+  clear: both ;
+  margin: 0 auto ;
+}
+
+dl#photo dt {
+  color: #BF7480, 8% ;
+}
+
+dl#photo dd {
+  margin: 0 ;
+}
+
+dl#photo img {
+  border: 1px solid #BF7480, 8% ;
+}
+
+#product_title {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#product_descript {
+    display: block;
+    text-align: justify;
+    margin: auto;
+    margin-bottom: 5%;
+    width: 60%;
+}
+
+.heigth2{
+    width: 60%;
+}
+.text {
+    margin-top: 30px;
+    height: 52%;
+}
+
+.center{
+   text-align: center;
+}
+
+.tableau {
+    height: 48%;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.centervert{
+   padding-top: 1%;
+}
+
+#productPrice{
+    margin: 5% auto;
+}
+
+#quantite{
+    text-align: center;
+}
+
+/** inventaire **/
+
+.inventaire h1, .commande h1{
+    text-align: center;
+    margin:25px;
+}
+
+.inventaire table, .commande table{
+    width: 60%;
+    margin:auto;
+    border-collapse: collapse;    
+}
+
+.inventaire th, .commande th{
+    text-align: left;
+    border: 1px solid black;
+    padding-left: 4px;
+    background-color: #fff5ee;
+}
+
+.inventaire td, .commande td{
+    text-align: left;
+    border: 1px solid black;
+    padding-left: 4px;
+    background-color: #fff5ee;
+    
+}
+
+.newA {
+    margin-left: 20%;
+}
+
+.inventaire tr, .commande tr {
+    height: 2em;
+    
+}
+
+
+
+
+
+
+/** page À popos **/
+
+#propos {
+    display: flex;
+    
+    width: 100%;
+    margin-bottom: 40px;
+    
+}
+#cont{
+    margin-top: 50px;
+    margin-bottom: 170px;
+}
+#pictcreator {
+    width: 90%;
+    box-shadow: 25px 25px 5px rgba(191, 116, 128, 0.15);
+}
+@keyframes anim{
+    from {
+      opacity: 0%;
+      left: 0;
+      transform: translateX(-15px)
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+#creator {
+    animation-name: anim;
+    animation-duration: 3s;
+    text-align: justify;
+    background-color:rgba(192, 193, 194, 0.8);
+    border-radius: 5px;
+    font-size: 28px;
+    
+    padding: 5px;
+}
+
+#creatorname {
+    display: block;
+    text-align: center;
+    padding-bottom: 30px;
+
+}
+
+/*               css du footer   */
+
+footer{
+     
+    
+    font-size: 20px;
+    background-color:rgba(192, 193, 194,0.9);
+   display: grid ;
+   grid-template-rows: auto;
+    grid-template-columns: repeat(6,1fr) ;
+    grid-template-areas: 'a b c d e f ';
+     text-align: center;                    
+      align-items: center;                   
+    
+    margin: 10px;
+    padding: 5px;
+}
+footer div:first-of-type{
+    grid-area: a;
+    text-align: right;
+
+}
+
+footer div:nth-of-type(2){
+    grid-area: c;
+    text-align: right;
+
+}
+footer div:nth-of-type(3){
+    grid-area: e;
+    text-align: right;
+}
+footer p:first-of-type{
+    grid-area: b;
+
+}
+
+footer p:nth-of-type(2){
+    grid-area: d;
+   
+
+}
+footer p:nth-of-type(3){
+    grid-area: f;
+   text-align: left;
+}
+
+
+/* CSS produits */
+
+.h1prduit{
+    text-align: center;
+    font-size: 45px;
+}
+
+.containerProduit{
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    flex-wrap: wrap;
+    align-content: center;    
+}
+
+.produitIndividuel{
+    display: block;
+    width: 20%;
+    margin: 2%;
+    background-color:rgba(192, 193, 194,0.9);
+    text-align: center;
+    flex-shrink: 0;
+    
+
+}
+
+.lien{
+    text-decoration: none;
+    color: rgb(53, 5, 46);
+}
+
+.nomProduit{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.enPromo{
+    color: red;
+}
+
+
+
+
+
+/* Formulaire ajout et edit produit */
+
+.h1 , .h2  {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.formProduit {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:auto;
+    grid-template-areas: 'fA fI';
+}
+
+.formAttribut {
+    width: 90%;
+    margin-left: auto;
+    grid-area: fA;
+    padding: 10px;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto;
+    grid-template-areas: '. nomProduit nomProduit nomProduit .'
+                         '. description description description.'
+                         '. prix . inventaire .'
+                         '. promotion .  vedette .' ;
+
+}
+
+.nomProduit{
+    grid-area: nomProduit;
+    
+}
+
+.description{
+    grid-area: description;
+    
+}
+
+.prix{
+    grid-area: prix;
+    
+}
+
+.inventaire{
+    grid-area: inventaire;
+    
+}
+
+.promotion{
+    grid-area: promotion;
+}
+
+.vedette{
+    grid-area: vedette;
+}
+
+.formImage {
+    width: 90%;
+    margin-right:auto ;
+    grid-area: fI;
+}
+
+.formulaire{
+    text-align: center;
+}
+
+.botnform{    
+    background: rgba(191, 116, 128, 0.2);
+    border:   2px solid  #BF7480;
+    border-radius: 5px;
+    width:10%;
+    height: 10%;
+    display: block;
+    margin: 1% auto;
+    text-decoration: none;  
+    color: black;
+    font-size: 15px;
+    text-align: center;
+}
+
+.botnhov:hover{
+    color:black;
+}
+
+.block{
+    display: block;
+    width: 10%;
+    margin-left: 45%;
+    border-radius: 5px;
+    background: rgba(191, 116, 128, 0.2);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;  
+
+}
+
+.imageProduit{
+    display: flex;
+    width: 100%;
+}
+
+.imageIndividuelle{
+    display: block;
+    width: 25%;
+    text-align: center;
+}
+
+
+
+
+

@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nous contacter{% endblock %}
+{% block javascripts %}
+<script>
+
+let captcha = new Array();
+
+function createCaptcha() {
+  const activeCaptcha = document.getElementById("captcha");
+  for (q = 0; q < 6; q++) {
+    if (q % 2 == 0) {
+      captcha[q] = String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+    } else {
+      captcha[q] = Math.floor(Math.random() * 10 + 0);
+    }
+  }
+  theCaptcha = captcha.join("");
+  activeCaptcha.innerHTML = `${theCaptcha}`;
+}
+function validateCaptcha() {
+  var errCaptcha = document.getElementById("errCaptcha");
+  var reCaptcha = document.getElementById("reCaptcha");
+  reCaptcha = reCaptcha.value;
+  let validateCaptcha = 0;
+  for (var z = 0; z < 6; z++) {
+    if (reCaptcha.charAt(z) != reCaptcha[z]) {
+      validateCaptcha++;
+    }
+  }
+  if (reCaptcha == "") {
+    errCaptcha.innerHTML = "Re-Captcha ne peut être vide";
+  } else if (validateCaptcha > 0 || reCaptcha.length > 6) {
+    errCaptcha.innerHTML = "mauvais captcha";
+  } else {
+    errCaptcha.innerHTML = "Vous n'etes pas un robot !";
+     afficherEnvoyer()
+     document.getElementById('verification').style.visibility='hidden';
+  }
+}
+function afficherEnvoyer(){
+                    document.getElementById('contactligne4').style.visibility='visible';
+
+                    getFocus();
+       }
+</script>
+
+{% endblock %}
+{% block body %}
+<section id="Contact">
+<section class="containercontact  ">
+<section id="textecontact">
+<p>Vous avez des questions?</p>
+<p>Vous aimeriez nous faire part de vos commentaires?</p>
+<p>Il nous ferra plaisir de vous répondre dans les plus bref délai!</p>
+</section>
+<section id="formcontact" class="grille">
+<div class="col-sm-12 grille nouscontacterinfo">
+    <div class="formgroup" id="contactligne1">
+{{ form_start(form) }}
+    {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+
+
+</div>
+<div class="formgroup"id="contactligne2">
+    {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+<div class="formgroup" id="contactligne5">
+    {{ form_row(form.tel, {'attr': {'class': 'form-control'}}) }}
+
+</div> 
+
+<div class="formgroup" id="contactligne3">
+    {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
+
+</div>
+
+
+
+<div id="verification" class="container ">
+      <div id="captcha" class="captcha"><script>createCaptcha();</script></div>
+      <div class="restart">
+        <a href="#" onclick="createCaptcha()">Changer</a>
+      </div>
+      <div class="input">
+        <input
+          type="text"
+          name="reCaptcha"
+          id="reCaptcha"
+          placeholder="Inscrire le Captcha"
+        />
+      </div>
+      <div><input type="button" id="je_ne" value="Je ne suis pas un robot" onclick="validateCaptcha()" /></div>
+      <div id="errCaptcha" class="errmsg"></div>
+    </div>
+
+<div class="formgroup" id="contactligne4">
+    <input type="submit" value="Envoyer"  class="btn btn-primary py-3 px-5">
+</div>
+{{ form_end(form) }}
+</div>
+</section>
+</section>
+</section>
+{% endblock %}
